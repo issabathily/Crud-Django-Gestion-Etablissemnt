@@ -1,0 +1,95 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'etudiant/index.css' %}">
+</head>
+<body>
+
+{% block Contener %}
+<header>
+    <nav>
+        <strong class="pill-group">Etablissement</strong>
+        <ul class="fleches">
+            <li><a href="">Etudiants</a></li>
+            <li><a href="">Professeur</a></li>
+            <li><a href="">Personnel</a></li>
+        </ul>
+    </nav>
+</header>
+{% endblock %}
+
+<br><br><br>
+
+<div class="containers">
+    <div>
+        <img src="{% static 'etudiant/images/images.png' %}" alt="Image de l'établissement">
+    </div>
+    <div>
+        <h1 style="margin-left: 4%">Listes des étudiants <span class="issa"> <i> 👨‍🎓</i>  </span>  </h1>
+        <a style="display: block" href="{% url 'form' %}">
+            <button class="button_add">
+                <i class="fa-solid fa-user-plus"></i> Ajouter un étudiant
+            </button>
+        </a>
+
+        <p>
+            Bienvenue à My School. Veuillez vous inscrire. <br>
+            Voici la liste des étudiants enregistrés.
+        </p>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>NOM</th>
+            <th>PRENOM</th>
+            <th>AGES</th>
+            <th>FILIERE</th>
+            <th>INSCRIS</th>
+            <th>DATES</th>
+            <th>STATUS</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for etudiant in etudiants %}
+        <tr>
+            <td>{{ etudiant.nom }}</td>
+            <td>{{ etudiant.prenom }}</td>
+            <td>{{ etudiant.Ages }} ans</td>
+            <td>{{ etudiant.metier }}</td>
+
+            {% if etudiant.est_inscris %}
+                <td>OUI</td>
+            {% else %}
+                <td>NON</td>
+            {% endif %}
+
+            <td>{{ etudiant.created_at }}</td>
+
+            <td>
+                <button class="btn01">
+                    <a href="{% url 'modifier' etudiant.id %}">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                </button>
+                <button class="btn02">
+                    <a href="{% url 'delete' etudiant.id %}">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+</body>
+</html>

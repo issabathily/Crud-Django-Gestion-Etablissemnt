@@ -1,0 +1,233 @@
+body{
+    height: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+header {
+  height: 45px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  align-items: center;
+  background-color: #8514F5FF  ;
+  display: flex;
+  color: white;
+
+}
+
+body{
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+nav{
+padding: 5px ;
+  display: flex;
+  align-items: center;
+}
+
+
+header nav ul {
+  padding: 5px ;
+  display: flex;
+  list-style: none;
+
+  position: relative;
+  left: 100%;
+}
+header nav ul li {
+
+
+}
+
+header nav ul li a{
+    position: relative;
+  left: 190%;
+  text-decoration: none;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+
+}
+header a{
+  transition: all 0.8s ;
+}
+button a{
+  text-decoration: none;
+  color: white;
+
+}
+header a:hover{
+
+background-color: #5700a1;
+}
+.fleches button{
+background-color: #1c0041;
+  padding: 8px;
+  justify-content: flex-start;
+  position:  relative;
+
+  left: -20%;
+  border-radius: 50px ;
+  color: white;
+  border: solid 2px white;
+
+}
+
+
+  table{
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+
+    border-collapse: collapse;
+    color: #1c0041;
+  width: 90%;
+    margin: 5%;
+  }
+  thead{
+    background-color: #ac82d7;
+  }
+  table th,td{
+  text-align: center;
+    align-items: center;
+    padding: 5px ;
+    width: 200px;
+  
+  }
+  
+  form{
+    width: 50%;
+  }
+  
+  
+  .button_add{
+    cursor: pointer;
+    width: 130px;
+  background-color: #8514F5FF;
+    padding: 5px ;
+  transition: all 0.8s;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-left: 18%;
+  }
+  
+
+  
+
+  
+  .retour button{
+    color: #1c0041;
+  }
+  .retour{
+  
+  position: fixed;
+  padding: 5px  7px;
+    margin-left: 1%;
+  color: #6206be;
+  
+    border: solid 3px #8514F5FF ;
+    border-radius: 50%;
+    margin-top: 25px;
+  cursor: pointer;
+  }
+  .retour i{
+      font-size: 1rem;
+    transition: all 0.8s;
+    animation: retour 3s ;
+  }
+  
+  @keyframes retour {
+    0%{
+     transform: translateX(-0%);
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  
+  }
+
+ .button_add i{
+   animation:  icons 4s ;
+
+}
+  td .btn01{
+    cursor: pointer;
+    margin-left: 15%;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 3px ;
+background-color: #8514F5FF;
+  }
+    td .btn02{
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 3px ;
+       background-color: #1c0041;
+cursor: pointer;
+  }
+
+    td .btn02:hover i{
+       transition: transform 0.3s ease, opacity 0.5s ease;
+  animation:  moveToTrash 2s infinite;
+    }
+td .btn01:hover{
+
+
+  background-color: #5700a1;
+}
+td .btn02:hover{
+  animation: a;
+    transition: all 0.8s;
+background-color: #6a22cb;
+}
+img{
+  width: 80%;
+
+  object-fit: cover;
+}
+.containers div{
+  width: 100%;
+}
+.containers{
+  display: flex;
+  width: 100%;
+}
+
+
+@keyframes icons {
+  0%{
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(50%);
+  }
+  100%{
+    transform: translateY(100%);
+  }
+}
+
+
+@keyframes moveToTrash {
+  0% {
+    transform: translateY(-10px) ;
+    opacity: 1;  /
+  }
+  50% {
+    transform: translateY(10px) ;
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px) ;
+    opacity: 0;
+  }
+}
